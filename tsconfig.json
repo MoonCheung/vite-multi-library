@@ -1,0 +1,21 @@
+{ 
+  "include": [
+    "packages/*/src/**/*.ts",
+    "packages/*/__tests__/**/*.ts"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "sourceMap": true,
+  
+    "target": "es2016",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    
+    "strict": true,
+    
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vitest"]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  // TODO: 暂时playground文件夹的react扩展的tsconfig.json
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "include": ["./src", "./index.d.ts"]
+}

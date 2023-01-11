@@ -1,0 +1,8 @@
+{
+  "name": "@img-uploader/react",
+  "private": true,
+  "type": "module",
+  "exports": "./img-uploader-react.esm.js",
+  "types": "./img-uploader-react.d.ts",
+  "sideEffects": false
+}

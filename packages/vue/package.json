@@ -1,0 +1,8 @@
+{
+  "name": "@img-uploader/vue",
+  "private": true,
+  "type": "module",
+  "exports": "./img-uploader-vue.esm.js",
+  "types": "./img-uploader-vue.d.ts",
+  "sideEffects": false
+}

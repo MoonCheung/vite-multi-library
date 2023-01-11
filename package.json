@@ -1,0 +1,74 @@
+{
+  "name": "img-uploader",
+  "version": "1.0.0",
+  "description": "Image type inputer or uploader",
+  "types": "img-uploader.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "lint": "eslint --ext \"**/*.{js,jsx,ts,tsx}\" --ignore-path .gitignore .",
+    "prettier": "prettier --write \"**/*.{js,jsx,json}\"",
+    "test:types": "tsc --build ./tsconfig.json",
+    "clean": "rm -rf .parcel-cache && pnpm -r run clean",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -u -s"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.3.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "@vitejs/plugin-react": "^3.0.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.13",
+    "chalk": "^5.2.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "exec-sh": "^0.4.0",
+    "fs-extra": "^11.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.9.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4",
+    "vitest": "^0.27.0",
+    "vue": "^3.2.45"
+  },
+  "exports": {
+    ".": "./esm/img-uploader.esm.js",
+    "./esm": "./esm/img-uploader.esm.js",
+    "./esm/img-uploader.esm.js": "./esm/img-uploader.esm.js",
+    "./esm/browser": "./esm/img-uploader.esm.browser.js",
+    "./esm/browser/min": "./esm/img-uploader.esm.browser.min.js",
+    "./react": "./packages/react/img-uploader-react.esm.js",
+    "./vue": "./packages/vue/img-uploader-vue.esm.js",
+    "./img-uploader.js": "./img-uploader.js",
+    "./img-uploader.min.js": "./img-uploader.min.js",
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoonCheung/img-uploader.git"
+  },
+  "keywords": [
+    "vue",
+    "react"
+  ],
+  "author": "MoonCheung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MoonCheung/img-uploader/issues"
+  },
+  "homepage": "https://github.com/MoonCheung/img-uploader#readme",
+  "engines": {
+    "node": ">=14"
+  }
+}
