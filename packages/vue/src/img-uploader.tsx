@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 
 const ImgUploader = defineComponent({
   name: 'ImgUploader',
-  setup: () => {
+  setup() {
     return <div>hello Vue</div>;
   }
 });

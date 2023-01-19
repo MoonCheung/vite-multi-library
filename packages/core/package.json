@@ -1,0 +1,9 @@
+{
+  "name": "@img-uploader/core",
+  "private": true,
+  "type": "module",
+  "types": "dist/img-uploader.d.ts",
+  "unpkg": "dist/img-uploader.global.js",
+  "jsdelivr": "dist/img-uploader.global.js",
+  "sideEffects": false
+}

@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "exports": "./img-uploader-react.esm.js",
-  "types": "./img-uploader-react.d.ts",
+  "types": "dist/img-uploader-react.d.ts",
+  "unpkg": "dist/img-uploader-react.global.js",
+  "jsdelivr": "dist/img-uploader-react.global.js",
   "sideEffects": false
 }

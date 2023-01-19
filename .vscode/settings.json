@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": false, // 保存时eslint自动修复错误
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  }
+}

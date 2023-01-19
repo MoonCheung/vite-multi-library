@@ -1,6 +1,17 @@
-let modules = process.env.MODULES || false;
-if (modules === 'esm' || modules === 'false') modules = false;
+export default function (api) {
+  // https://babeljs.io/docs/en/config-files#config-function-api
 
-export default {
-  presets: [['@babel/preset-env', { modules, loose: true }]]
-};
+  return {
+    ignore: ['./node_modules'],
+    presets: [
+      ['@babel/preset-env', { modules: false, loose: true }],
+      [
+        '@babel/preset-typescript',
+        {
+          isTSX: true,
+          allExtensions: true
+        }
+      ]
+    ]
+  };
+}

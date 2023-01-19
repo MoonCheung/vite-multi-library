@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "exports": "./img-uploader-vue.esm.js",
-  "types": "./img-uploader-vue.d.ts",
+  "types": "dist/img-uploader-vue.d.ts",
+  "unpkg": "dist/img-uploader-vue.global.js",
+  "jsdelivr": "dist/img-uploader-vue.global.js",
   "sideEffects": false
 }

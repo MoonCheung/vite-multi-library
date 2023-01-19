@@ -1,21 +1,25 @@
-{ 
-  "include": [
-    "packages/*/src/**/*.ts",
-    "packages/*/__tests__/**/*.ts"
-  ],
+{
+  "include": ["packages/*/src/**/*.ts", "packages/*/__tests__/**/*.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "sourceMap": true,
-  
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    /* Language and Environment */
     "target": "es2016",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "declaration": true,
-    
-    "strict": true,
-    
-    "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vitest"]
+    /* Modules */
+    "module": "esnext",
+    "baseUrl": ".",
+    "types": ["vitest"],
+    "moduleResolution": "node",
+    /* Emit */
+    "outDir": "dist",
+    "declaration": true,
+    // "declarationDir" : "types",
+    // "emitDeclarationOnly": true,
+    "sourceMap": true,
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    /* Type Checking */
+    "strict": true
   }
 }
