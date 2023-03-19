@@ -1,10 +1,36 @@
 {
   "name": "@img-uploader/react",
-  "private": true,
+  "private": false,
+  "version": "1.0.0",
+  "description": "@img-uploader/react",
   "type": "module",
-  "exports": "./img-uploader-react.esm.js",
+  "main": "dist/img-uploader-react.cjs.js",
+  "module": "dist/img-uploader-react.esm.js",
   "types": "dist/img-uploader-react.d.ts",
   "unpkg": "dist/img-uploader-react.global.js",
   "jsdelivr": "dist/img-uploader-react.global.js",
-  "sideEffects": false
+  "exports": {
+    ".": {
+      "types": "./dist/img-uploader-react.d.ts",
+      "import": "./dist/img-uploader-react.esm.js",
+      "require": "./dist/img-uploader-react.cjs.js"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoonCheung/img-uploader",
+    "directory": "packages/react"
+  },
+  "dependencies": {
+    "@img-uploader/core": "workspace:^1.0.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

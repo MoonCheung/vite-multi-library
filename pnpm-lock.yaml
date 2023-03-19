@@ -13,12 +13,8 @@ importers:
       '@rollup/plugin-commonjs': ^24.0.0
       '@rollup/plugin-node-resolve': ^15.0.1
       '@rollup/plugin-typescript': ^11.0.0
-      '@types/react': ^18.0.26
-      '@types/react-dom': ^18.0.10
       '@typescript-eslint/eslint-plugin': ^5.48.1
       '@typescript-eslint/parser': ^5.48.1
-      '@vitejs/plugin-react': ^3.0.1
-      '@vitejs/plugin-vue': ^4.0.0
       '@vue/babel-plugin-jsx': ^1.1.1
       autoprefixer: ^10.4.13
       chalk: ^5.2.0
@@ -31,15 +27,11 @@ importers:
       npm-run-all: ^4.1.5
       postcss: ^8.4.21
       prettier: ^2.8.2
-      react: ^18.2.0
-      react-dom: ^18.2.0
       rollup: ^3.9.1
       terser: ^5.16.1
       tslib: ^2.4.1
       typescript: ^4.9.4
-      vite: ^4.0.4
       vitest: ^0.27.0
-      vue: ^3.2.45
     devDependencies:
       '@babel/cli': 7.20.7_@babel+core@7.20.12
       '@babel/core': 7.20.12
@@ -50,12 +42,8 @@ importers:
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.9.1
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.9.1
       '@rollup/plugin-typescript': 11.0.0_hqjvco2e22ojmon3nhwchufpre
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.10
       '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
       '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
-      '@vitejs/plugin-react': 3.0.1_vite@4.0.4
-      '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.12
       autoprefixer: 10.4.13_postcss@8.4.21
       chalk: 5.2.0
@@ -68,28 +56,42 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.21
       prettier: 2.8.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
       rollup: 3.9.1
       terser: 5.16.1
       tslib: 2.4.1
       typescript: 4.9.4
-      vite: 4.0.4_terser@5.16.1
       vitest: 0.27.1_terser@5.16.1
-      vue: 3.2.45
+
+  packages/core:
+    specifiers: {}
 
   packages/react:
-    specifiers: {}
+    specifiers:
+      '@img-uploader/core': workspace:^1.0.0
+      '@types/react': ^18.0.26
+      '@types/react-dom': ^18.0.11
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@img-uploader/core': link:../core
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.11
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
 
   packages/vue:
-    specifiers: {}
+    specifiers:
+      '@img-uploader/core': workspace:^1.0.0
+      vue: ^3.2.45
+    dependencies:
+      '@img-uploader/core': link:../core
+      vue: 3.2.45
 
   playground/react:
     specifiers:
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
-      img-uploader: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.9.3
@@ -101,14 +103,13 @@ importers:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
       '@vitejs/plugin-react': 3.0.1_vite@4.0.4
-      img-uploader: link:../..
       typescript: 4.9.4
       vite: 4.0.4
 
   playground/vue:
     specifiers:
       '@vitejs/plugin-vue': ^4.0.0
-      img-uploader: workspace:*
+      '@vitejs/plugin-vue-jsx': ^3.0.1
       typescript: ^4.9.3
       vite: ^4.0.0
       vue: ^3.2.45
@@ -117,7 +118,7 @@ importers:
       vue: 3.2.45
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
-      img-uploader: link:../..
+      '@vitejs/plugin-vue-jsx': 3.0.1_vite@4.0.4+vue@3.2.45
       typescript: 4.9.4
       vite: 4.0.4
       vue-tsc: 1.0.24_typescript@4.9.4
@@ -1838,7 +1839,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
@@ -1846,13 +1846,18 @@ packages:
       '@types/react': 18.0.26
     dev: true
 
+  /@types/react-dom/18.0.11:
+    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
+    dependencies:
+      '@types/react': 18.0.26
+    dev: false
+
   /@types/react/18.0.26:
     resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
-    dev: true
 
   /@types/resolve/1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -1860,7 +1865,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
@@ -2006,7 +2010,23 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.12
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.0.4_terser@5.16.1
+      vite: 4.0.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vitejs/plugin-vue-jsx/3.0.1_vite@4.0.4+vue@3.2.45:
+    resolution: {integrity: sha512-+Jb7ggL48FSPS1uhPnJbJwWa9Sr90vQ+d0InW+AhBM22n+cfuYqJZDckBc+W3QSHe1WDvewMZfa4wZOtk5pRgw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.0.0
+    dependencies:
+      '@babel/core': 7.20.12
+      '@babel/plugin-transform-typescript': 7.20.7_@babel+core@7.20.12
+      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.12
+      vite: 4.0.4
+      vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2018,7 +2038,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.4_terser@5.16.1
+      vite: 4.0.4
       vue: 3.2.45
     dev: true
 
@@ -2494,7 +2514,6 @@ packages:
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
-    dev: true
 
   /de-indent/1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
@@ -3389,6 +3408,7 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
 
   /loupe/2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
@@ -3727,6 +3747,7 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
@@ -3738,6 +3759,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
 
   /read-pkg/3.0.0:
     resolution: {integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA==}
@@ -3866,6 +3888,7 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
 
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
@@ -4287,40 +4310,6 @@ packages:
         optional: true
     dependencies:
       '@types/node': 18.11.18
-      esbuild: 0.16.17
-      postcss: 8.4.21
-      resolve: 1.22.1
-      rollup: 3.9.1
-      terser: 5.16.1
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vite/4.0.4_terser@5.16.1:
-    resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1

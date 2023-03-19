@@ -1,9 +1,29 @@
 {
   "name": "@img-uploader/core",
   "private": true,
+  "version": "1.0.0",
+  "description": "@img-uploader/core",
   "type": "module",
+  "main": "dist/img-uploader.cjs.js",
+  "module": "dist/img-uploader.esm.js",
   "types": "dist/img-uploader.d.ts",
   "unpkg": "dist/img-uploader.global.js",
   "jsdelivr": "dist/img-uploader.global.js",
-  "sideEffects": false
+  "exports": {
+    ".": {
+      "types": "./dist/img-uploader.d.ts",
+      "import": "./dist/img-uploader.esm.js",
+      "require": "./dist/img-uploader.cjs.js"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoonCheung/img-uploader",
+    "directory": "packages/core"
+  }
 }

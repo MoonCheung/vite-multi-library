@@ -1,10 +1,33 @@
 {
   "name": "@img-uploader/vue",
-  "private": true,
+  "private": false,
+  "version": "1.0.0",
+  "description": "@img-uploader/vue",
   "type": "module",
-  "exports": "./img-uploader-vue.esm.js",
+  "main": "dist/img-uploader-vue.cjs.js",
+  "module": "dist/img-uploader-vue.esm.js",
   "types": "dist/img-uploader-vue.d.ts",
   "unpkg": "dist/img-uploader-vue.global.js",
   "jsdelivr": "dist/img-uploader-vue.global.js",
-  "sideEffects": false
+  "exports": {
+    ".": {
+      "types": "./dist/img-uploader-vue.d.ts",
+      "import": "./dist/img-uploader-vue.esm.js",
+      "require": "./dist/img-uploader-vue.cjs.js"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoonCheung/img-uploader",
+    "directory": "packages/vue"
+  },
+  "dependencies": {
+    "@img-uploader/core": "workspace:^1.0.0",
+    "vue": "^3.2.45"
+  }
 }
