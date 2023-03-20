@@ -4,6 +4,7 @@ import { minify } from 'terser';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
 import banner from './scripts/banner.js';
+import dts from 'rollup-plugin-dts';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
@@ -40,9 +41,11 @@ function getBabelConfig(config = {}) {
 
 const outputConfig = Object.create(null);
 
+const isFrame = (param) => (/(vue|react)/i.test(param) ? `-${param}` : '');
+
 outputConfig.outputEsmConfig = function (name, file) {
   return {
-    file: resolve(`${file}/dist/${name}.esm.js`),
+    file: resolve(`${file}/dist/${name}${isFrame(file)}.esm.js`),
     format: 'esm',
     banner: banner(file),
     sourcemap: prod
@@ -52,7 +55,7 @@ outputConfig.outputEsmConfig = function (name, file) {
 
 outputConfig.outputCjsConfig = function (name, file) {
   return {
-    file: resolve(`${file}/dist/${name}.cjs.js`),
+    file: resolve(`${file}/dist/${name}${isFrame(file)}.cjs.js`),
     format: 'cjs',
     banner: banner(file),
     sourcemap: prod
@@ -66,7 +69,7 @@ outputConfig.outputIifeConfig = function (name, file) {
   return {
     name: firstUpperCase(`${name}-${file}`),
     format: 'iife',
-    file: resolve(`${file}/dist/${name}-${file}.global.js`),
+    file: resolve(`${file}/dist/${name}${isFrame(file)}.global.js`),
     banner: banner(file),
     sourcemap: prod
     // Future expansion output config
@@ -97,11 +100,26 @@ function genDynamicFun(target, name, file) {
 }
 
 export default function (args) {
-  return files.map((file) => {
-    return {
-      input: entryFile(file),
-      output: genDynamicFun(['esm', 'cjs', 'iife'], pkg.name, file),
-      plugins: createFramePlugin(file)
-    };
-  });
+  return [
+    ...files.map((file) => {
+      return {
+        input: entryFile(file),
+        output: genDynamicFun(['esm', 'cjs', 'iife'], pkg.name, file),
+        plugins: createFramePlugin(file)
+      };
+    }),
+    ...files.map((file) => {
+      return {
+        input: entryFile(file),
+        output: [{ file: resolve(`${file}/dist/${pkg.name}${isFrame(file)}.d.ts`), format: 'esm' }],
+        plugins: [
+          dts({
+            compilerOptions: {
+              preserveSymlinks: false
+            }
+          })
+        ]
+      };
+    })
+  ];
 }
