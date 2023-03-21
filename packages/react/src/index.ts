@@ -1,1 +1,1 @@
-export { ImgUploader } from './img-uploader'
+export { default as CButton } from './button';

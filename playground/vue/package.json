@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@img-uploader/vue": "workspace:^1.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
