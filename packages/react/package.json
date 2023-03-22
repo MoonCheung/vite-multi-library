@@ -4,16 +4,19 @@
   "version": "1.0.0",
   "description": "@img-uploader/react",
   "type": "module",
-  "main": "dist/img-uploader-react.cjs.js",
-  "module": "dist/img-uploader-react.esm.js",
-  "types": "dist/img-uploader-react.d.ts",
-  "unpkg": "dist/img-uploader-react.global.js",
-  "jsdelivr": "dist/img-uploader-react.global.js",
+  "main": "dist/index.react.cjs",
+  "module": "dist/index.react.js",
+  "types": "dist/index.react.d.ts",
+  "unpkg": "dist/index.react.global.js",
+  "jsdelivr": "dist/index.react.global.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "exports": {
     ".": {
-      "types": "./dist/img-uploader-react.d.ts",
-      "import": "./dist/img-uploader-react.esm.js",
-      "require": "./dist/img-uploader-react.cjs.js"
+      "types": "./dist/index.react.d.ts",
+      "import": "./dist/index.react.js",
+      "require": "./dist/index.react.cjs"
     },
     "./*": "./*"
   },

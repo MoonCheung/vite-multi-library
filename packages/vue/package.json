@@ -4,16 +4,19 @@
   "version": "1.0.0",
   "description": "@img-uploader/vue",
   "type": "module",
-  "main": "dist/img-uploader-vue.cjs.js",
-  "module": "dist/img-uploader-vue.esm.js",
-  "types": "dist/img-uploader-vue.d.ts",
-  "unpkg": "dist/img-uploader-vue.global.js",
-  "jsdelivr": "dist/img-uploader-vue.global.js",
+  "main": "dist/index.vue.cjs",
+  "module": "dist/index.vue.js",
+  "types": "dist/index.vue.d.ts",
+  "unpkg": "dist/index.vue.global.js",
+  "jsdelivr": "dist/index.vue.global.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "exports": {
     ".": {
-      "types": "./dist/img-uploader-vue.d.ts",
-      "import": "./dist/img-uploader-vue.esm.js",
-      "require": "./dist/img-uploader-vue.cjs.js"
+      "types": "./dist/index.vue.d.ts",
+      "import": "./dist/index.vue.js",
+      "require": "./dist/index.vue.cjs"
     },
     "./*": "./*"
   },

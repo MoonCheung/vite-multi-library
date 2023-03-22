@@ -4,16 +4,19 @@
   "version": "1.0.0",
   "description": "@img-uploader/core",
   "type": "module",
-  "main": "dist/img-uploader.cjs.js",
-  "module": "dist/img-uploader.esm.js",
-  "types": "dist/img-uploader.d.ts",
-  "unpkg": "dist/img-uploader.global.js",
-  "jsdelivr": "dist/img-uploader.global.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.global.js",
+  "jsdelivr": "dist/index.global.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "exports": {
     ".": {
-      "types": "./dist/img-uploader.d.ts",
-      "import": "./dist/img-uploader.esm.js",
-      "require": "./dist/img-uploader.cjs.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./*": "./*"
   },
