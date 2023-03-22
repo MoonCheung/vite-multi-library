@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react';
-import './button.css';
+import { style, styleInject } from '@img-uploader/core';
+
+styleInject(style);
 
 export interface ButtonProps {
   type?: 'primary' | 'secondary' | 'error';

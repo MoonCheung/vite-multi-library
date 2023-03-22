@@ -1,5 +1,7 @@
 import { defineComponent } from 'vue';
-import './button.css';
+import { style, styleInject } from '@img-uploader/core';
+
+styleInject(style);
 export default defineComponent({
   name: 'CButton',
   inheritAttrs: false,
