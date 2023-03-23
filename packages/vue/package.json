@@ -10,7 +10,8 @@
   "unpkg": "dist/index.vue.global.js",
   "jsdelivr": "dist/index.vue.global.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c rollup.config.ts --configPlugin typescript",
+    "watch": "rollup -wc rollup.config.ts --configPlugin typescript"
   },
   "exports": {
     ".": {
@@ -32,5 +33,8 @@
   "dependencies": {
     "@img-uploader/core": "workspace:^1.0.0",
     "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vue/babel-plugin-jsx": "^1.1.1"
   }
 }

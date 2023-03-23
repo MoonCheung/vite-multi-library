@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'url';
+import { defineConfig } from 'rollup';
 import { createRequire } from 'module';
 import dts from 'rollup-plugin-dts';
 import babel from '@rollup/plugin-babel';
@@ -14,7 +15,7 @@ const require = createRequire(import.meta.url);
 
 const pkg = require(`./package.json`);
 
-export default [
+export default defineConfig([
   {
     input: './src/index.ts',
     output: [
@@ -67,4 +68,4 @@ export default [
       })
     ]
   }
-];
+]);
