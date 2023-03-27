@@ -1,15 +1,24 @@
 {
-  "include": ["packages/*/src/**/*.ts", "packages/*/__tests__/**/*.ts"],
-  "exclude": ["node_modules"],
+  "include": [ "packages/*/src/**/*.ts", "packages/*/src/**/*.tsx"],
+  "exclude": [
+    "node_modules", 
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Language and Environment */
     "target": "es2016",
-    "lib": ["esnext", "dom"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     /* Modules */
     "module": "esnext",
     "baseUrl": ".",
-    "types": ["vitest"],
+    "paths": {
+      "@/*": ["src/*"],
+    },
+    "types": ["node", "vitest/globals"],
     "moduleResolution": "node",
     /* Emit */
     "outDir": "dist",

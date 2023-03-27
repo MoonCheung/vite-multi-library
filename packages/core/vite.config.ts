@@ -1,0 +1,38 @@
+/// <reference types="vitest"/>
+import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+import banner from '../../scripts/banner.js';
+
+const require = createRequire(import.meta.url);
+
+const pkg = require(`./package.json`);
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  build: {
+    lib: {
+      name: pkg.name,
+      entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
+      formats: ['es', 'cjs', 'iife'],
+      fileName: (format) => {
+        switch (format) {
+          case 'es':
+            return pkg.module;
+          case 'cjs':
+            return pkg.main;
+          case 'iife':
+            return pkg.unpkg;
+        }
+      }
+    },
+    minify: false,
+    rollupOptions: {
+      output: {
+        banner: banner('core'),
+        exports: 'named',
+        extend: true
+      }
+    }
+  }
+});
