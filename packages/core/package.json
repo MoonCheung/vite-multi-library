@@ -10,8 +10,8 @@
   "unpkg": "dist/index.global.js",
   "jsdelivr": "dist/index.global.js",
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin typescript",
-    "watch": "rollup -wc rollup.config.ts --configPlugin typescript"
+    "dev": "vite",
+    "build": "vite build"
   },
   "exports": {
     ".": {

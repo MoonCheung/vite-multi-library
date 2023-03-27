@@ -15,18 +15,16 @@
     "clean": "rm -rf .parcel-cache && pnpm -r run clean",
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -u -s",
     "vue": "pnpm -r --parallel --filter=./playground/vue run dev",
-    "react": "pnpm -r --parallel --filter=./playground/react run dev"
+    "react": "pnpm -r --parallel --filter=./playground/react run dev",
+    "test": "pnpm -r --filter=./packages/** run test --watch=false"
   },
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.18.6",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
+    "@testing-library/dom": "^9.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/vue": "^7.0.0",
+    "@types/node": "^18.15.10",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "chalk": "^5.2.0",
@@ -36,6 +34,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "exec-sh": "^0.4.0",
     "fs-extra": "^11.1.0",
+    "jsdom": "^21.1.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.2",
     "rollup": "^3.9.1",
@@ -43,7 +42,8 @@
     "terser": "^5.16.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
-    "vitest": "^0.27.0"
+    "vite": "^4.0.0",
+    "vitest": "^0.29.7"
   },
   "exports": {
     "./package.json": "./package.json"

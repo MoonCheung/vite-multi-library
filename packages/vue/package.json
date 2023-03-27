@@ -10,8 +10,9 @@
   "unpkg": "dist/index.vue.global.js",
   "jsdelivr": "dist/index.vue.global.js",
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin typescript",
-    "watch": "rollup -wc rollup.config.ts --configPlugin typescript"
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest"
   },
   "exports": {
     ".": {
@@ -35,6 +36,7 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@vue/babel-plugin-jsx": "^1.1.1"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1"
   }
 }
