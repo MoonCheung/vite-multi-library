@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "@img-uploader/core",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "unpkg": "dist/index.global.js",
-  "jsdelivr": "dist/index.global.js",
+  "main": "index.cjs",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "unpkg": "index.global.js",
+  "jsdelivr": "index.global.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

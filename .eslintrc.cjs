@@ -23,6 +23,7 @@ module.exports = {
      */
     // 关闭两个 ESLint 核心规则，与 Prettier 有冲突
     'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off'
+    'prefer-arrow-callback': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off'
   }
 };

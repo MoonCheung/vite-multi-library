@@ -1,3 +1,4 @@
+// @ts-ignore
 import fs from 'fs-extra';
 
 const pkg = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url)));
@@ -9,7 +10,7 @@ const formatter = new Intl.DateTimeFormat('zh', {
 });
 const releaseDate = formatter.format(date);
 
-export default (name = null) =>
+export default (name: string | unknown = null) =>
   `${`
 /**
  * Img-Uploader ${name ? `${name} ` : ''}${pkg.version}

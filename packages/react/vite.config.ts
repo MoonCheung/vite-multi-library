@@ -2,7 +2,8 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
-import banner from '../../scripts/banner.js';
+import dts from 'vite-plugin-dts';
+import banner from '../../scripts/banner';
 import react from '@vitejs/plugin-react';
 
 const require = createRequire(import.meta.url);
@@ -11,7 +12,7 @@ const pkg = require(`./package.json`);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react({ fastRefresh: false })],
+  plugins: [dts({ insertTypesEntry: true }), react({ fastRefresh: false })],
   worker: {
     plugins: [react()]
   },

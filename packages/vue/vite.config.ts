@@ -2,7 +2,8 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
-import banner from '../../scripts/banner.js';
+import dts from 'vite-plugin-dts';
+import banner from '../../scripts/banner';
 import vue from '@vitejs/plugin-vue';
 import vueJSX from '@vitejs/plugin-vue-jsx';
 
@@ -12,7 +13,7 @@ const pkg = require(`./package.json`);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJSX()],
+  plugins: [dts({ insertTypesEntry: true }), vue(), vueJSX()],
   build: {
     lib: {
       name: pkg.name,
