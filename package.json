@@ -4,14 +4,11 @@
   "version": "1.0.0",
   "description": "Image type inputer or uploader",
   "type": "module",
-  "browserslist": [
-    "defaults",
-    "not IE 11"
-  ],
+  "browserslist": ["defaults", "not IE 11"],
   "scripts": {
     "build": "pnpm -r --filter=./packages/** run build",
-    "lint": "eslint --ext \"**/*.{js,jsx,ts,tsx}\" --ignore-path .gitignore .",
-    "prettier": "prettier --write \"**/*.{js,jsx,json}\"",
+    "lint": "pnpm exec biome check --write",
+    "prettier": "pnpm exec biome format --write",
     "clean": "rm -rf .parcel-cache && pnpm -r run clean",
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -u -s",
     "vue": "pnpm -r --parallel --filter=./playground/vue run dev",
@@ -19,6 +16,7 @@
     "test": "pnpm -r --filter=./packages/** run test --watch=false"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.5",
     "@testing-library/dom": "^9.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -51,10 +49,7 @@
     "type": "git",
     "url": "git+https://github.com/MoonCheung/img-uploader.git"
   },
-  "keywords": [
-    "vue",
-    "react"
-  ],
+  "keywords": ["vue", "react"],
   "author": "MoonCheung",
   "license": "MIT",
   "bugs": {
