@@ -1,12 +1,12 @@
-import React, { FC, ReactNode } from 'react';
-import { style, styleInject } from '@img-uploader/core';
+import { style, styleInject } from '@img-uploader/core'
+import React, { FC, ReactNode } from 'react'
 
-styleInject(style);
+styleInject(style)
 
 export interface ButtonProps {
-  type?: 'primary' | 'secondary' | 'error';
-  children?: ReactNode;
-  onClick: () => void;
+  type?: 'primary' | 'secondary' | 'error'
+  children?: ReactNode
+  onClick: () => void
 }
 
 const CButton: FC<ButtonProps> = ({ type, onClick, children }) => {
@@ -14,7 +14,7 @@ const CButton: FC<ButtonProps> = ({ type, onClick, children }) => {
     <button type='button' className={`Button Button-${type}`} onClick={onClick}>
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default CButton;
+export default CButton

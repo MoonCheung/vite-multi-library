@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import viteLogo from './assets/vite.svg';
-import reactLogo from './assets/react.svg';
-import { CButton } from '@img-uploader/react';
-import './App.css';
+import { CButton } from '@img-uploader/react'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   const handleClick = () => {
-    console.log('outer click');
-  };
+    console.log('outer click')
+  }
 
   return (
     <div className='App'>
@@ -31,7 +31,7 @@ function App() {
       </div>
       <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

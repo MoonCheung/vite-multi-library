@@ -22,4 +22,4 @@ export const style = `
 .button-error {
   background-color: red;
 }
-`;
+`

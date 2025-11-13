@@ -2,5 +2,5 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {},
   "include": ["src/**/*", "vite.config.ts"],
-  "exclude": ["src/**/__tests__/*"],
+  "exclude": ["src/**/__tests__/*"]
 }

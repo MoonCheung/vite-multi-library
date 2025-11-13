@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { CButton } from '@img-uploader/vue'
+import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
-import { CButton } from '@img-uploader/vue';
 
 const handleClick = () => {
   console.log('outer click')

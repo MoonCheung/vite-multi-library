@@ -1,13 +1,14 @@
 /// <reference types="vitest"/>
-import { defineConfig } from 'vite';
-import { fileURLToPath } from 'url';
-import { createRequire } from 'module';
-import dts from 'vite-plugin-dts';
-import banner from '../../scripts/banner';
 
-const require = createRequire(import.meta.url);
+import { createRequire } from 'module'
+import { fileURLToPath } from 'url'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
+import banner from '../../scripts/banner'
 
-const pkg = require(`./package.json`);
+const require = createRequire(import.meta.url)
+
+const pkg = require(`./package.json`)
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,11 +21,11 @@ export default defineConfig({
       fileName: (format) => {
         switch (format) {
           case 'es':
-            return pkg.module;
+            return pkg.module
           case 'cjs':
-            return pkg.main;
+            return pkg.main
           case 'iife':
-            return pkg.unpkg;
+            return pkg.unpkg
         }
       }
     },
@@ -37,4 +38,4 @@ export default defineConfig({
       }
     }
   }
-});
+})
