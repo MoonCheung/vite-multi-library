@@ -2,8 +2,8 @@
   "$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
-    "ignoreUnknown": false,
-    "includes": ["**/*.{js,jsx,ts,tsx}", "!.gitignore"]
+    "includes": ["**/*.{js,jsx,ts,tsx}", "!**/.react-router", "!**/.vscode", "!**/node_modules"],
+    "ignoreUnknown": true
   },
   "formatter": {
     "enabled": true,
